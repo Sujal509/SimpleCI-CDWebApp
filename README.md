@@ -20,6 +20,6 @@ This project is a simple application that uses Vite for the frontend and Node.js
 3. Install the required packages according to your OS
   ```install_node_modules_windows.ps1``` or ```install_node_modules_linux.sh```
 4. Modify the environment variables (optional)
-5. Start the Application by running ```npm start``` in the `api` and `frontend` directories respectively
+5. Start the Application by running ```npm start``` and ```npm run dev``` in the `api` and `frontend` directories respectively
 6. Go to `http://localhost:3000` (Note :- 3000 is the port set for Vite , you can change this in `vite.config.js`)
 7. Explore and Modify !
