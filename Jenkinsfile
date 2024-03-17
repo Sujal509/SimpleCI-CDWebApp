@@ -6,10 +6,12 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Sujal509/SimpleCI-CDWebApp.git'
+                script {
+                    checkout([: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Sujal509/SimpleCI-CDWebApp.git']]])
+                }
             }
         }
-
+        
         stage('Build Backend') {
             steps {
                 dir('api') {

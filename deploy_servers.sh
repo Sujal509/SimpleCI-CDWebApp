@@ -9,7 +9,7 @@ pm2 delete all || true
 
 pm2 logs --nostream
 
-cd /app/backend
+cd /app/api
 npm install
 pm2 start npm --name backend -- run start --exp-backoff-restart-delay=200 > /dev/null
 
