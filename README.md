@@ -14,12 +14,12 @@ This project is a simple application that uses Vite for the frontend and Node.js
 
 ### Installation for Development and Testing of the Application
 1. Clone the repo with
-  ```git clone https://github.com/Sujal509/SimpleWebApp.git```
+  ```git clone https://github.com/Sujal509/SimpleCI-CDWebApp.git```
 2. cd into the Project with
-  ```cd SimpleWebApp```
+  ```cd SimpleCI-CDWebApp```
 3. Install the required packages according to your OS
   ```install_node_modules_windows.ps1``` or ```install_node_modules_linux.sh```
 4. Modify the environment variables (optional)
 5. Start the Application by running ```npm start``` in the `api` and `frontend` directories respectively
-6. Go to `http://localhost:5173` (Note :- 5173 is the default port for Vite)
-7. Explore !
+6. Go to `http://localhost:3000` (Note :- 3000 is the port set for Vite , you can change this in `vite.config.js`)
+7. Explore and Modify !
