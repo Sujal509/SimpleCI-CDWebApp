@@ -36,6 +36,11 @@ app.all('*', (req, res) => {
     return res.status(404).json({ 'message': 'Invalid Route' });
 });
 
-app.listen(port, () => {
-    console.log(`Backend Server running on port ${port}`);
+const server = app.listen(port, () => {
+    console.log(`Backend server running on port ${port}`);
 });
+
+module.exports = {
+    app,
+    server
+};
