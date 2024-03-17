@@ -6,7 +6,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Sujal509/JenkinsTest.git'
+                git 'https://github.com/Sujal509/SimpleCI-CDWebApp.git'
             }
         }
 
