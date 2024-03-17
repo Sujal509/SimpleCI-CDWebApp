@@ -5,7 +5,7 @@ const os = require('os');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: true }));
 
@@ -36,8 +36,8 @@ app.all('*', (req, res) => {
     return res.status(404).json({ 'message': 'Invalid Route' });
 });
 
-const server = app.listen(port, () => {
-    console.log(`Backend server running on port ${port}`);
+const server = app.listen(PORT, () => {
+    console.log(`Backend server running on port ${PORT}`);
 });
 
 module.exports = {
