@@ -19,7 +19,6 @@ function ApiHandle() {
 
     return (
         <>
-            <h3 id="h3id">This is a test </h3>
             <button type="button" onClick={handleClick}>Load Data</button>
             {loading ? (
                 <p>Loading...</p>
