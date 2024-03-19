@@ -7,7 +7,7 @@ The core functionality of this application lies in its ability to communicate wi
 
 What sets this project apart is its implementation of a Continuous Integration / Continuous Deployment (CI/CD) pipeline using Jenkins and Docker. This ensures that this application is built and deployed in a consistent and reliable manner, reducing the risk of integration problems and allowing for faster iterations.
 
-With this project , i aim to provide a solid foundation for any developer looking to dive into the world of Vite and Node.js, while also showcasing the benefits of CI/CD in improving the overall quality of software development.
+With this project , I aim to provide a solid foundation for any developer looking to dive into the world of Vite and Node.js, while also showcasing the benefits of CI/CD in improving the overall quality of software development.
 ## Getting Started
 
 #### Tested and built with
