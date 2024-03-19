@@ -1,22 +1,23 @@
 # My Vite + Node.js Project
 
 ## Overview
-Welcome to my project , a seamless integration of Vite and Nodejs. This application is designed with a focus on simplicity and efficiency.
+Welcome to my project , a seamless integration of Vite and NodeJs. This application is designed with a focus on simplicity and efficiency.
 
 The core functionality of this application lies in its ability to communicate with the backend using API's, demonstrating the power of asynchronous operations in modern web applications.
 
 What sets this project apart is its implementation of a Continuous Integration / Continuous Deployment (CI/CD) pipeline using Jenkins and Docker. This ensures that this application is built and deployed in a consistent and reliable manner, reducing the risk of integration problems and allowing for faster iterations.
 
-With this project , I aim to provide a solid foundation for any developer looking to dive into the world of Vite and Node.js, while also showcasing the benefits of CI/CD in improving the overall quality of software development.
+With this project , I aim to provide a solid foundation for any developer looking to dive into the world of Vite and NodeJs, while also showcasing the benefits of CI/CD in improving the overall quality of software development.
 ## Getting Started
 
 #### Tested and built with
 - Jenkins - 2.440.1
 - Docker - 20.10.21
-- Node.js - 20.11.1
+- NodeJs - 20.11.1
 - Npm - 10.2.4
 - Vite - 5.1.6
 - Pm2 - 5.3.1
+- Serve - 14.2.1
 - Java - 21.0.2
 
 ### Installation for Development and Testing of the Application
