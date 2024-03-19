@@ -28,6 +28,23 @@ pipeline {
             }
         }
 
+        stage('Build Frontend') {
+            steps {
+                dir('frontend') {
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Cleanup Frontend Directory') {
+            steps {
+                sh '''
+                    mv frontend/dist .
+                    rm -r frontend
+                '''
+            }
+        }
+
         //TODO stage('Test Frontend')
 
         stage('Deploy Application') {
