@@ -42,7 +42,7 @@ pipeline {
         stage('Cleanup Frontend Directory') {
             steps {
                 sh '''
-                    mv frontend/dist .
+                    cp -rf frontend/dist .
                     rm -r frontend
                 '''
             }
