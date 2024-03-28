@@ -20,6 +20,7 @@ function ApiHandle() {
     return (
         <>
             <button type="button" onClick={handleClick}>Load Data</button>
+            <h2>Test Update</h2>
             {loading ? (
                 <p>Loading...</p>
             ) : (
