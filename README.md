@@ -25,11 +25,11 @@ With this project , I aim to provide a solid foundation for any developer lookin
   ```bash
 git clone https://github.com/Sujal509/SimpleCI-CDWebApp.git
 ```
-3. cd into the Project with
+2. cd into the Project with
   ```bash
 cd SimpleCI-CDWebApp
 ```
-5. Install the required packages on Windows with
+3. Install the required packages on Windows with
   ```bash
 ./install_node_modules_windows.ps1
 ```
@@ -40,10 +40,10 @@ sudo chmod +x install_node_modules_linux.sh
 ```
 
 
-7. Modify the environment variables (optional)
-8. Start the Application by running `npm start` and `npm run dev` in the api and frontend directories respectively
-9. Go to `http://localhost:3000` (Note :- 3000 is the port set for Vite , you can change this in `vite.config.js`)
-10. Explore and Modify !
+4. Modify the environment variables (optional)
+5. Start the Application by running `npm start` and `npm run dev` in the api and frontend directories respectively
+6. Go to `http://localhost:3000` (Note :- 3000 is the port set for Vite , you can change this in `vite.config.js`)
+7. Explore and Modify !
 
 ### Deploying with Jenkins and Docker
 1. Modify the `Deploy Application` stage according to your server
