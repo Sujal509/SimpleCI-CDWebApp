@@ -46,6 +46,7 @@ sudo chmod +x install_node_modules_linux.sh
 7. Explore and Modify !
 
 ### Deploying with Jenkins and Docker
-1. Modify the `Deploy Application` stage according to your server
-2. Modify the ports in `setup_and_run_docker_container.sh` according to your available ports
-3. Run the pipeline in Jenkins , and watch it Deploy !
+1. Modify the `Upload Files` and `Deploy Application` stage according to your server
+2. Modify the Email credentials accordingly (Note :- You need to setup EmailExt first)
+3. Modify the ports in `setup_and_run_docker_container.sh` according to your available ports
+4. Run the pipeline in Jenkins , and watch it Deploy !
