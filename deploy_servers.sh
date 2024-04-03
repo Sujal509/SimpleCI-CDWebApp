@@ -12,5 +12,5 @@ cd ..
 serve dist -s -l 3000
 
 sleep 2
-pm2 ls
 echo 'Finished Deploying !'
+pm2 ls

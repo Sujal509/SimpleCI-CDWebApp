@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker stop $(docker ps -a -q) || true
+docker stop $(docker ps -aq) || true
 
 docker build -t simple-cicd-app .
 
