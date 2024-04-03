@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    environment {
+        LOCALDIR = "${WORKSPACE}"
+    }
+
     stages {
 
         stage('Checkout') {
@@ -50,18 +54,41 @@ pipeline {
 
         //TODO stage('Test Frontend')
 
+        stage('Upload Files') {
+            steps {
+                script {
+                    sshagent(credentials: ['ssh-credentials-of-your-remote-server']) {
+                        sh "rsync -avz --delete --exclude '*@tmp' --exclude '*/node_modules' -e 'ssh -o StrictHostKeyChecking=no' ${LOCALDIR}/ <your_username>@<your_remote_server_ip>:/home/<your_username>/Desktop/SimpleCICDWebApp/"
+                    }
+                }
+            }
+        }
+
         stage('Deploy Application') {
             steps {
                 script {
                     sshagent(credentials: ['ssh-credentials-of-your-remote-server']) {
-                        sh '''
-                            ssh <your_username>@<your_remote_server_ip> "cd /home/<your_username>/Desktop/SimpleCICDWebApp && rm -r * || true "
-                            find ${WORKSPACE} -mindepth 1 -maxdepth 1 -not -empty -not -name "*@tmp" -not -name ".git" -not -name "node_modules" -exec scp -r {} <your_username>@<your_remote_server_ip>:/home/<your_username>/Desktop/SimpleCICDWebApp/ \\;
-		                    ssh <your_username>@<your_remote_server_ip> "cd /home/<your_username>/Desktop/SimpleCICDWebApp && bash setup_and_run_docker_container.sh "
-                        '''
+                        sh " ssh <your_username>@<your_remote_server_ip> 'cd /home/<your_username>/Desktop/SimpleCICDWebApp && bash setup_and_run_docker_container.sh'"
                     }
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            emailext (
+                mimeType: "text/html",
+                from: "<your-email-address>",
+                replyTo: "<your-replyto-email-address>",
+                subject: "Pipeline status of ${BUILD_NAME}",
+                body: '''<html>
+                            <body>
+                                <p>Build Status : ${BUILD_STATUS}</p>
+                                <p>Check details over <a href="${BUILD_URL}">here</a></p>
+                            </body>
+                        </html>'''
+            )
         }
     }
 }
