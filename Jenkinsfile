@@ -1,3 +1,15 @@
+/*Prerequisites
+* Replace your github url and branch in the Checkout stage
+*
+* Replace USER and IP with your proper Credentials
+*
+* For ssh to work correctly make sure you have 'ssh-credentials-of-your-remote-server' configured correctly
+* 
+* 'rsync' is used to sync the Jenkins workspace with the remote servers directory
+*
+* Developed by Sujal509
+*/
+
 pipeline {
 
     agent any
