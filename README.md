@@ -5,7 +5,7 @@ Welcome to my project , a seamless integration of Vite and NodeJs. This applicat
 
 The core functionality of this application lies in its ability to communicate with the backend using API's, demonstrating the power of asynchronous operations in modern web applications.
 
-What sets this project apart is its implementation of a Continuous Integration / Continuous Deployment (CI/CD) pipeline using Jenkins and Docker. This ensures that this application is built and deployed in a consistent and reliable manner, reducing the risk of integration problems and allowing for faster iterations.
+What sets this project apart is its implementation of a Continuous Integration / Continuous Deployment (CI/CD) pipeline using Jenkins and Docker. This ensures that this application is built and deployed in a consistent and reliable manner, reducing the risk of integration problems and allowing for faster iterations. This project utilizes 'rsync', a fast and versatile utility that provides fast incremental file transfer and synchronization. It significantly improves the efficiency of data updates and backups. The application is equipped with an email facility, integrated into the Jenkins pipeline. This allows for effective communication and notifications, enhancing the user experience by keeping stakeholders informed about the status of the CI/CD process.
 
 With this project , I aim to provide a solid foundation for any developer looking to dive into the world of Vite and NodeJs, while also showcasing the benefits of CI/CD in improving the overall quality of software development.
 ## Getting Started
@@ -19,6 +19,7 @@ With this project , I aim to provide a solid foundation for any developer lookin
 - Pm2 - 5.3.1
 - Serve - 14.2.1
 - Java - 21.0.2
+- Rsync - 3.2.7
 
 ### Installation for Development and Testing of the Application
 1. Clone the repo with
