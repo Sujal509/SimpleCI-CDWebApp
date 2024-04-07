@@ -1,7 +1,9 @@
 /*Prerequisites
-* Replace your github url and branch in the Checkout stage
+* Replace your github url and branch name in the Checkout stage
 *
 * Replace USER and IP with your proper Credentials
+*
+* Replace Email Credentials accordingly
 *
 * For ssh to work correctly make sure you have 'ssh-credentials-of-your-remote-server' configured correctly
 * 
