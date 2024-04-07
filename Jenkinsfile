@@ -3,7 +3,15 @@ pipeline {
     agent any
 
     environment {
-        LOCALDIR = "${WORKSPACE}"
+        USER = "<your_username_of_remote_server>"
+        IP = "<your_ip_of_remote_server>"
+
+        LOCALDIR = "${WORKSPACE}/"
+        PRODDIR = "/home/${USER}/Desktop/SimpleDemoApp/"
+        
+        EMAIL_FROM = "<your_email_address>"
+        EMAIL_REPLY_TO = "<your_reply_to_address>"
+        EMAIL_TO = "<email_address_where_email_is_sent>"
     }
 
     stages {
@@ -58,7 +66,7 @@ pipeline {
             steps {
                 script {
                     sshagent(credentials: ['ssh-credentials-of-your-remote-server']) {
-                        sh "rsync -avz --delete --exclude '*@tmp' --exclude '*/node_modules' -e 'ssh -o StrictHostKeyChecking=no' ${LOCALDIR}/ <your_username>@<your_remote_server_ip>:/home/<your_username>/Desktop/SimpleCICDWebApp/"
+                        sh "rsync -avz --delete --exclude '*@tmp' --exclude '*/node_modules' -e 'ssh -o StrictHostKeyChecking=no' ${LOCALDIR} ${USER}@${IP}:/home/${USER}/Desktop/SimpleCICDWebApp/"
                     }
                 }
             }
@@ -68,7 +76,7 @@ pipeline {
             steps {
                 script {
                     sshagent(credentials: ['ssh-credentials-of-your-remote-server']) {
-                        sh " ssh <your_username>@<your_remote_server_ip> 'cd /home/<your_username>/Desktop/SimpleCICDWebApp && bash setup_and_run_docker_container.sh'"
+                        sh " ssh ${USER}@${IP} '${PRODDIR} && bash setup_and_run_docker_container.sh'"
                     }
                 }
             }
@@ -79,15 +87,16 @@ pipeline {
         always {
             emailext (
                 mimeType: "text/html",
-                from: "<your-email-address>",
-                replyTo: "<your-replyto-email-address>",
+                from: "${EMAIL_FROM}",
+                replyTo: "${EMAIL_REPLY_TO}",
+                to: "${EMAIL_TO}",
                 subject: "Pipeline status of ${BUILD_NAME}",
-                body: '''<html>
+                body: """<html>
                             <body>
                                 <p>Build Status : ${BUILD_STATUS}</p>
                                 <p>Check details over <a href="${BUILD_URL}">here</a></p>
                             </body>
-                        </html>'''
+                        </html>"""
             )
         }
     }
