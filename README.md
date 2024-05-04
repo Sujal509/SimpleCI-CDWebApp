@@ -14,7 +14,7 @@ With this project , I aim to provide a solid foundation for any developer lookin
 ## Getting Started
 
 #### Tested and built with
-- Jenkins - 2.440.1
+- Jenkins - 2.440.2
 - Docker - 20.10.21
 - NodeJs - 20.11.1
 - Npm - 10.2.4
@@ -50,7 +50,7 @@ sudo chmod +x install_node_modules_linux.sh
 7. Explore and Modify !
 
 ### Deploying with Jenkins and Docker
-1. Modify the `Upload Files` and `Deploy Application` stage according to your server
+1. Modify the `Upload Files` and `Deploy Application` stage in the `Jenkinsfile` according to your server
 2. Modify the Email credentials accordingly (Note :- You need to setup EmailExt first)
 3. Modify the ports in `setup_and_run_docker_container.sh` according to your available ports
 4. Run the pipeline in Jenkins , and watch it Deploy !
