@@ -23,7 +23,7 @@ function ApiHandle() {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <p>{!data ? "Click the button to load data" : data}</p>
+                <p>{!data ? "Click the button to load random number" : data}</p>
             )}
         </>
     );
